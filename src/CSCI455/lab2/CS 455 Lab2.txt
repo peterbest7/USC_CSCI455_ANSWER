@@ -1,0 +1,445 @@
+Name:
+USC NetID:
+CSCI 455 
+Lab 2
+
+Exercise 1 (1 checkoff point)
+===========================================================================================================
+Question 1.0 In the README file (or lab write-up), put the first and last names and the roles (driver/scribe) of each of the partners, the course name and lab number.
+
+Answer 1.0 
+I finished this lab alone.
+------------------------------------------------------------------------------------------------------------
+Question 1.1 What import statement is necessary to use the LocalDate class?
+
+Answer 1.1
+import java.time.LocalDate;
+---------------------------------------------------------------------------------------------------------------
+Question 1.2 In your README, write a statement to create a LocalDate for the date January 20, 1995:    put the date in a variable called myDate.
+
+Answer 1.2
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Locale;
+
+public class testDate{
+    public static void main(String[] args) {
+        DateTimeFormatter ymdEn= DateTimeFormatter.ofPattern("MMMM dd, yyyy", Locale.ENGLISH);
+        String myDate= LocalDate.of(1995,1,20).format(ymdEn);
+        System.out.println(myDate);
+    }
+}
+
+ccc_v1_w_ZTVi_116612@runweb10:~$ javac testDate.java                                                                                 
+ccc_v1_w_ZTVi_116612@runweb10:~$ java testDate                                                                                       
+January 20, 1995        
+--------------------------------------------------------------------------------------------------
+Question 1.3 Write down a statement (or statements) to print out myDate: it should be formatted as follows:
+1/20/1995
+
+Answer 1.3
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
+
+public class testDate2{
+    public static void main(String[] args) {
+        DateTimeFormatter ymd = DateTimeFormatter.ofPattern("M/dd/yyyy");
+        String myDate= LocalDate.of(1995,1,20).format(ymd);
+        System.out.println(myDate);
+    }
+}
+
+ccc_v1_w_ZTVi_116612@runweb10:~$ javac testDate2.java                                                                                
+ccc_v1_w_ZTVi_116612@runweb10:~$ java testDate2                                                                                      
+1/20/1995 
+-------------------------------------------------------------------------------------------
+Question 1.4 Write down a statement that creates a new date 20 days later than myDate. Call this date later. (We're looking for something that would work no matter what date we started with.)
+
+Answer 1.4
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
+
+public class testDate3{
+    public static void main(String[] args) {
+        LocalDate myDate = LocalDate.of(1995,1,20);
+        LocalDate laterDate = myDate.plusDays(20);
+        DateTimeFormatter ymd = DateTimeFormatter.ofPattern("M/dd/yyyy");
+        String later = laterDate.format(ymd);
+        System.out.println(later);
+    }
+}
+
+
+
+ccc_v1_w_ZTVi_116612@runweb10:~$ javac testDate3.java                                                                                
+ccc_v1_w_ZTVi_116612@runweb10:~$ java testDate3    
+                                                                        
+2/09/1995           
+------------------------------------------------------------------------------------
+Question 1.5 Suppose, instead, you wanted to change myDate to one 20 days later, Write down a statement to accomplish this. (We're looking for something that would work no matter what the old value of the date was.)
+Hint: LocalDate is an immutable class (like String).
+
+Answer 1.5
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Scanner;
+
+public class testDate4{
+    public static void main(String[] args) {
+         Scanner input = new Scanner(System.in);
+        System.out.println("please enter the year: ");
+        String year = input.next();
+        System.out.println("please enter the mouth: ");
+        String month = input.next();
+        System.out.println("please enter the day: ");
+        String day = input.next();
+        System.out.println("please enter the days you want to plus: ");
+        String plus = input.next();
+        int y = Integer.parseInt(year);
+        int m= Integer.parseInt(month);
+        int d =Integer.parseInt(day);
+        int p = Integer.parseInt(plus);
+        LocalDate myDate = LocalDate.of(y,m,d).plusDays(p);
+        System.out.println(myDate);
+    }
+}
+ccc_v1_w_ZTVi_116612@runweb10:~$ javac testDate4.java                                                                                
+ccc_v1_w_ZTVi_116612@runweb10:~$ java testDate4                                                                                      
+please enter the year:                                                                                                               
+1995                                                                                                                                 
+please enter the mouth:                                                                                                              
+1                                                                                                                                    
+please enter the day:                                                                                                                
+20                                                                                                                                   
+please enter the days you want to plus:                                                                                              
+20                                                                                                                                   
+1995-02-09
+----------------------------------------------------------------------------------------------------
+Exercise 2 (1 checkoff point)
+======================================================================================================
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
+
+public class Date{
+    public static void main(String[] args) {
+        LocalDate myDate = LocalDate.of(1995,1,20);
+        LocalDate laterDate = myDate.plusDays(20);
+        DateTimeFormatter ymd = DateTimeFormatter.ofPattern("M/d/yyyy");
+        String later = laterDate.format(ymd);
+        String myDateString = myDate.format(ymd);
+        System.out.println(myDateString);
+        System.out.println(later);
+    }
+}
+ccc_v1_w_ZTVi_116612@runweb10:~$ javac Date.java                                                                                     
+ccc_v1_w_ZTVi_116612@runweb10:~$ java Date                                                                                           
+1/20/1995                                                                                                                            
+2/9/1995 
+--------------------------------------------------------------------------------------
+Question 2.1 Describe two compile errors that you got while developing this code and their fixes. (It's ok if both errors had the same high-level message, e.g., "cannot find symbol".)
+
+Answer 2.1
+testDate2.java:5: error: class testDate is public, should be declared in a file named testDate.java                                  
+public class testDate{                                                                                                               
+       ^                                                                                                                             
+1 error    
+
+error: Class names, 'testDate4', are only accepted if annotation processing is explicitly requested                                  
+1 error   
+
+I forget to change the class name when I use old code.
+and I forget to add header public when I declare a class.
+-------------------------------------------------------------------------------------------
+Exercise 3 (1 checkoff point)
+=======================================================================================================
+import java.time.LocalDate;
+import java.time.Month;
+import java.util.Scanner;
+public class Birthday {
+    public static void main(String[] args) {
+        int m, d, y;
+        Scanner s = new Scanner(System.in);
+        System.out.print("Enter your birth month [1..12]: ");
+        m = s.nextInt();
+        System.out.print("Enter your birth day of month: ");
+        d = s.nextInt();
+        System.out.print("Enter your birth year [4-digit year] ");
+        y = s.nextInt();
+        while (!judgeDate(m, d, y)) {
+            System.out.print("Enter your birth month [1..12]: ");
+            m = s.nextInt();
+            System.out.print("Enter your birth day of month: ");
+            d = s.nextInt();
+            System.out.print("Enter your birth year [4-digit year] ");
+            y = s.nextInt();
+        }
+        LocalDate date = LocalDate.now();
+        int day = date.getDayOfMonth();
+        int year = date.getYear();
+        int mouth = date.getMonthValue();
+        int age = year - y;
+        int age1 = year - y - 1;
+        LocalDate yourDate = LocalDate.of(y, m, d);
+        try{
+            LocalDate yourThisYearDate = LocalDate.of(year, m, d);
+            if (localDateIsAfter(yourDate, date)) {
+                System.out.println("You weren't born yet");
+            } else {
+                if (localDateIsEqual(yourThisYearDate, date)) {
+                    System.out.println("Happy Birthday!");
+                } else if (localDateIsAfter(yourThisYearDate, date)) {
+                    System.out.println("Your birthday has not yet happened this year.");
+                    System.out.println("You're " + age1 + " years old.");
+                } else {
+                    System.out.println("Your birthday has passed");
+                    System.out.println("You're " + age + " years old.");
+                }
+            }
+        }catch (Exception e){
+           System.out.println("You don't have a birthday this year");
+        }
+        finally {
+            
+        }
+        }
+
+
+
+    public static boolean localDateIsEqual(LocalDate firstDate, LocalDate secondDate) {
+        return firstDate.isEqual(secondDate);
+    }
+    public static boolean localDateIsAfter(LocalDate firstDate, LocalDate secondDate) {
+        return firstDate.isAfter(secondDate);
+    }
+    public static boolean judgeDate(int m, int d, int y) {
+        LocalDate now = LocalDate.now();
+        int day = now.getDayOfMonth();
+        int year = now.getYear();
+        int mouth = now.getMonthValue();
+        boolean flag = false;
+        if (y > year || y < 1000) {
+            flag = false;
+            System.out.println("this year haven't happened yet or the year is before 1000");
+        } else if (y == year && m > mouth) {
+            flag = false;
+            System.out.println("this month haven't happened yet");
+        } else if (y == year && m == mouth && d > day) {
+            flag = false;
+            System.out.println("this day haven't happened yet");
+        } else {
+            if (m < 1 || m > 12) {
+                System.out.println("the month is wrong, you should enter the month between 1 to 12");
+                flag = false;
+            } else if (m == 1 || m == 3 || m == 5 || m == 7 || m == 8 || m == 10 || m == 12) {
+                if (d <= 31) {
+                    flag = true;
+                } else {
+                    flag = false;
+                    System.out.println("please enter the day between 1 to 31 in 1,3,5,7,8,10,12 mouth");
+                }
+            } else if (m == 2) {
+                if (y % 400 == 0 || (y % 4 == 0 && y % 100 != 0)) {
+                    if (d <= 29) {
+                        flag = true;
+                    } else {
+                        flag = false;
+                        System.out.println("in this year in 2 mouth the day is between 1 to 29, please enter the correct day");
+                    }
+                } else {
+                    if (d <= 28) {
+                        flag = true;
+                    } else {
+                        flag = false;
+                        System.out.println("in this year in 2 mouth the day is between 1 to 28, please enter the correct day");
+                    }
+                }
+            } else {
+                if (d <= 30) {
+                    flag = true;
+                } else {
+                    flag = false;
+                    System.out.println("please enter the day between 1 to 30 in 4,6,9,11  mouth");
+                }
+            }
+        }
+        return flag;
+    }
+}
+---------------------------------------------------------------------------------------------------------
+Question 3.1 Describe two compile errors that you got and their fixes while developing this code. 
+
+Answer 3.1
+Exception in thread "main" java.time.DateTimeException: Invalid date 'February 29' as '2021' is not a leap year             
+        at java.time.LocalDate.create(LocalDate.java:429)                                                                   
+        at java.time.LocalDate.of(LocalDate.java:269)                                                                       
+        at Birthday.main(Birthday.java:29)    
+
+Although 2/29/2000 is leap year, 2021 is not, so I throw the exception. and this people who borned in 2/29/2021
+doesn't have birthday this year.
+           
+Leap year problem: I didn't take leap years into account at first.
+static method problem: I didn't make the method static and just called it.
+-------------------------------------------------------------------------------------------------------------
+Question 3.2 Devise three test cases (not the one above) for which you and the TA already know the answer, to help verify that your code is working correctly. Describe these test cases and the expected results in the README. Then try out your test cases to help verify your program works properly.
+
+Answer 3.2
+1: 1/20/1995
+Enter your birth month [1..12]: 1                                                                                           
+Enter your birth day of month: 20                                                                                           
+Enter your birth year [4-digit year] 1995                                                                                   
+Your birthday has passed                                                                                                    
+You're 26 years old.  
+2: 2/1/1995
+Enter your birth month [1..12]: 2                                                                                           
+Enter your birth day of month: 1                                                                                            
+Enter your birth year [4-digit year] 1995                                                                                   
+Your birthday has not yet happened this year.                                                                               
+You're 25 years old. 
+Enter your birth month [1..12]: 2                                                                                           
+Enter your birth day of month: 31                                                                                           
+Enter your birth year [4-digit year] 1995                                                                                   
+in this year in 2 mouth the day is between 1 to 28, please enter the correct day 
+4: 2/29/2020
+Enter your birth month [1..12]: 2                                                                                           
+Enter your birth day of month: 29                                                                                           
+Enter your birth year [4-digit year] 2020                                                                                   
+You don't have a birthday this year 
+--------------------------------------------------------------------------------
+Exercise 4 (1 checkoff point)
+====================================================================================
+import java.time.LocalDate;
+import java.time.Month;
+import java.util.Scanner;
+public class Birthday {
+    public static void main(String[] args) {
+        int m, d, y;
+        Scanner s = new Scanner(System.in);
+        System.out.print("Enter your birth month [1..12]: ");
+        m = s.nextInt();
+        System.out.print("Enter your birth day of month: ");
+        d = s.nextInt();
+        System.out.print("Enter your birth year [4-digit year] ");
+        y = s.nextInt();
+        while (!judgeDate(m, d, y)) {
+            System.out.print("Enter your birth month [1..12]: ");
+            m = s.nextInt();
+            System.out.print("Enter your birth day of month: ");
+            d = s.nextInt();
+            System.out.print("Enter your birth year [4-digit year] ");
+            y = s.nextInt();
+        }
+        LocalDate date = LocalDate.now();
+        int day = date.getDayOfMonth();
+        int year = date.getYear();
+        int mouth = date.getMonthValue();
+        int age = year - y;
+        int age1 = year - y - 1;
+        LocalDate yourDate = LocalDate.of(y, m, d);
+        try{
+            LocalDate yourThisYearDate = LocalDate.of(year, m, d);
+            if (localDateIsAfter(yourDate, date)) {
+                System.out.println("You weren't born yet");
+            } else {
+                if (localDateIsEqual(yourThisYearDate, date)) {
+                    System.out.println("Happy Birthday!");
+                } else if (localDateIsAfter(yourThisYearDate, date)) {
+                    System.out.println("Your birthday has not yet happened this year.");
+                    System.out.println("You're " + age1 + " years old.");
+                } else {
+                    System.out.println("Your birthday has passed");
+                    System.out.println("You're " + age + " years old.");
+                }
+            }
+        }catch (Exception e){ 
+           System.out.println("You don't have a birthday this year");
+        }
+        finally {
+           
+        }
+        }
+
+
+
+    public static boolean localDateIsEqual(LocalDate firstDate, LocalDate secondDate) {
+        return firstDate.isEqual(secondDate);
+    }
+    public static boolean localDateIsAfter(LocalDate firstDate, LocalDate secondDate) {
+        return firstDate.isAfter(secondDate);
+    }
+    public static boolean judgeDate(int m, int d, int y) {
+        LocalDate now = LocalDate.now();
+        int day = now.getDayOfMonth();
+        int year = now.getYear();
+        int mouth = now.getMonthValue();
+        boolean flag = false;
+        if (y > year || y < 1000) {
+            flag = false;
+            System.out.println("this year haven't happened yet or the year is before 1000");
+        } else if (y == year && m > mouth) {
+            flag = false;
+            System.out.println("this month haven't happened yet");
+        } else if (y == year && m == mouth && d > day) {
+            flag = false;
+            System.out.println("this day haven't happened yet");
+        } else {
+            if (m < 1 || m > 12) {
+                System.out.println("the month is wrong, you should enter the month between 1 to 12");
+                flag = false;
+            } else if (m == 1 || m == 3 || m == 5 || m == 7 || m == 8 || m == 10 || m == 12) {
+                if (d <= 31) {
+                    flag = true;
+                } else {
+                    flag = false;
+                    System.out.println("please enter the day between 1 to 31 in 1,3,5,7,8,10,12 mouth");
+                }
+            } else if (m == 2) {
+                if (y % 400 == 0 || (y % 4 == 0 && y % 100 != 0)) {
+                    if (d <= 29) {
+                        flag = true;
+                    } else {
+                        flag = false;
+                        System.out.println("in this year in 2 mouth the day is between 1 to 29, please enter the correct day");
+                    }
+                } else {
+                    if (d <= 28) {
+                        flag = true;
+                    } else {
+                        flag = false;
+                        System.out.println("in this year in 2 mouth the day is between 1 to 28, please enter the correct day");
+                    }
+                }
+            } else {
+                if (d <= 30) {
+                    flag = true;
+                } else {
+                    flag = false;
+                    System.out.println("please enter the day between 1 to 30 in 4,6,9,11  mouth");
+                }
+            }
+        }
+        return flag;
+    }
+}
+    
+Enter your birth month [1..12]: 9                                                                                                    
+Enter your birth day of month: 30                                                                                                    
+Enter your birth year [4-digit year] 1991                                                                                            
+Your birthday has not yet happened this year.                                                                                        
+You're 29 years old.   
+           
+Enter your birth month [1..12]: 1                                                                                                    
+Enter your birth day of month: 27                                                                                                    
+Enter your birth year [4-digit year] 1995                                                                                            
+Happy Birthday! 
+
+Enter your birth month [1..12]: 2                                                                                                    
+Enter your birth day of month: 29                                                                                                    
+Enter your birth year [4-digit year] 2000                                                                                            
+You don't have a birthday this year            
+-------------------------------------------------------------------------------------------------------

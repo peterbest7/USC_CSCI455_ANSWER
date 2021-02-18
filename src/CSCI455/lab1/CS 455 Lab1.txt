@@ -1,0 +1,155 @@
+Name:
+USC NetID:
+CSCI 455 Spring 2021
+Lab 1
+
+Note: All students should put their answers to the lab questions in this file.
+
+
+Exercise 1
+-----------------------------------------------------------------------------------
+Question 1.1. What was the result of the command?
+
+Answer 1.1.
+
+/mnt/data2/students/ccc_v1_w_ZTVi_116612/asn325081_2/asn325082_1/work  
+
+ccc_v1_w_ZTVi_116612@runweb15:~$ ls                                                                                                                                                                         
+ex1  Hello.java  Name.java  README 
+-----------------------------------------------------------------------------------
+Question 1.2. What was the result of the command?
+
+Answer 1.2. 
+
+ccc_v1_w_ZTVi_116612@runweb15:~$ mkdir ex1                                                                                                                                                                  
+ccc_v1_w_ZTVi_116612@runweb15:~$ cd ex1                                                                                                                                   -----------------------------------------------------------------------------------
+Question 1.3. Predict what the results of the pwd command would be at this point. Verify your answer by trying it.
+
+Answer 1.3.
+
+ccc_v1_w_ZTVi_116612@runweb15:~/ex1$ pwd                                                                                                                                                                    
+/mnt/data2/students/ccc_v1_w_ZTVi_116612/asn325081_2/asn325082_1/work/ex1  
+---------------------------------------------------------------------------------------------------------------------------
+Question 1.4. Assuming you are still in the ex1 directory, write down two different commands that will get you to your home directory from there (i.e., will make your home directory your current directory). You can test them out by going back to the ex1 directory after trying each one.
+
+Answer 1.4. 
+ccc_v1_w_ZTVi_116612@runweb15:~/ex1$ cd ..                                                                                                                                                                                                                                                                                                  
+ccc_v1_w_ZTVi_116612@runweb15:~/ex1$ cd ~                                                                                                                                 ------------------------------------------------------                                 
+Question 1.5. Make sure you are in your home directory. Write down the command to list what's in the directory one level up from your home directory. Try it.
+
+Answer 1.5.
+ccc_v1_w_ZTVi_116612@runweb15:~$ cd ..                                                                                                                                                                      
+ccc_v1_w_ZTVi_116612@runweb15:/mnt/data2/students/ccc_v1_w_ZTVi_116612/asn325081_2/asn325082_1$  
+
+ccc_v1_w_ZTVi_116612@runweb15:~$ cp Hello.java ex1  
+
+ccc_v1_w_ZTVi_116612@runweb15:~/ex1$ mv Hello.java Happy.java  
+
+ccc_v1_w_ZTVi_116612@runweb15:~/ex1$ mv Hello.java Happy.java                                                                                                                                               
+ccc_v1_w_ZTVi_116612@runweb15:~/ex1$ rm Happy.java                                                                                                                                                          
+rm: remove regular file 'Happy.java'? y                                                                                                                                                                     
+------------------------------------------------------------------------------------------------------
+Question 1.6. Assuming you don't know what directory you are starting from, write down a sequence of commands such that after they are done, the ex1 directory in your workspace has a copy of the file Hello.java from your home directory. Try out your command sequence. Use ls to check if it worked.
+
+Answer 1.6.
+ccc_v1_w_ZTVi_116612@runweb15:~/ex1$ cd ..      
+
+ccc_v1_w_ZTVi_116612@runweb15:~$ cp ~/Hello.java ex1                                                                                                                                                        
+ccc_v1_w_ZTVi_116612@runweb15:~$ ls                                                                                                                                                                         
+ex1  Hello.java  Name.java  README  
+---------------------------------------------------------------------------
+Question 1.7. Write down (and execute) the command(s) to make a directory in your home directory called lab1.
+
+Answer 1.7.
+
+ccc_v1_w_ZTVi_116612@runweb15:~$ mkdir lab1                                                                                                                                                                 
+ccc_v1_w_ZTVi_116612@runweb15:~$ ls                                                                                                                                                                         
+ex1  Hello.java  lab1  Name.java  README                                                                                                                                                                    
+ccc_v1_w_ZTVi_116612@runweb15:~$ cd                                                                                                                                                                         
+ccc_v1_w_ZTVi_116612@runweb15:~$ mv ex1 lab1                                                                                                                                                                
+ccc_v1_w_ZTVi_116612@runweb15:~$ ls lab1/ex1                                                                                                                                                                
+Hello.java    
+
+ccc_v1_w_ZTVi_116612@runweb15:~$ cd lab1                                                                                                                                                                    
+ccc_v1_w_ZTVi_116612@runweb15:~/lab1$ cp ~/Hello.java ex1                                                                                                                                                   
+cp: overwrite 'ex1/Hello.java'? y                                                                                                                                                                           
+ccc_v1_w_ZTVi_116612@runweb15:~/lab1$ cp ex1/Hello.java .                                                                                                                 --------------------------------------------------------------                                  
+Question 1.8. What does the last "cp" command above do?
+Answer copy the Hello.java file from lab1/ex1 folder to the lab1 folder
+-----------------------------------------------------
+Question 1.9. Assuming you are starting from your home directory write down and execute a single command that will get you into your ex1 directory.
+
+Answer 1.9. 
+ccc_v1_w_ZTVi_116612@runweb15:~$ cd lab1/ex1   
+-----------------------------------------------------------
+Question 1.10. What directory did you just change to?
+
+Answer 1.10.
+home directory the work folder
+-------------------------------------------------------------
+Question 1.11. "cd" into the ex1 directory. Using relative path names as seen in the previous examples, write down and execute a single command to make a directory called foo that's also inside the lab1 directory (but that is not a subdirectory of ex1. By "a single command", we mean you will still be in the same directory (ex1) after making the new directory. (When you are done a listing of the lab1 directory should show both ex1 and foo.)
+
+Answer 1.11. 
+ccc_v1_w_ZTVi_116612@runweb15:~/lab1/ex1$ mkdir ~/lab1/foo                                                                                                               --------------------------------------------------------------
+Question 1.12. Write down and execute a single command to get into the new "foo" directory.
+Answer 1.12.
+ccc_v1_w_ZTVi_116612@runweb15:~/lab1/ex1$ cd ../foo  
+-------------------------------------------------------
+Question 1.13. Write down and execute a single command to list the files in the "ex1" directory (i.e., without changing directories).
+
+Answer 1.13.
+ccc_v1_w_ZTVi_116612@runweb15:~/lab1/foo$ ls ~/lab1/ex1/    
+ccc_v1_w_ZTVi_116612@runweb15:~/lab1$ rmdir foo
+------------------------------------------------------------------
+Exercise 2
+
+ccc_v1_w_ZTVi_116612@runweb15:~/lab1/ex1$ javac Hello.java                                                                                                                                                  
+ccc_v1_w_ZTVi_116612@runweb15:~/lab1/ex1$ ls                                                                                                                                                                
+Hello.class  Hello.java                                                                                                                                                                                     
+ccc_v1_w_ZTVi_116612@runweb15:~/lab1/ex1$ java Hello    
+
+Hello world!                               
+-------------------------------------------------------------------
+Exercise 3
+------------------------
+Question 3.1. Copy and paste the text of the compiler error message into the README file.
+
+Answer 3.1.
+Hello.java:7: error: ';' expected                                                                                                                                                                           
+      System.out.println("Hello world!")                                                                                                                                                                    
+                                        ^                                                                                                                                                                   
+1 error  
+-------------------------------------------------------------
+Question 3.2. Note the line number of the third error. Where in the program does it think this error is?
+
+Answer 3.2.
+Hello.java:7: error: unclosed string literal                                                                                                                                                                
+      System.out.println("Hello world!)                                                                                                                                                                     
+                         ^                                                                                                                                                                                  
+Hello.java:7: error: ';' expected                                                                                                                                                                           
+      System.out.println("Hello world!)                                                                                                                                                                     
+                                       ^                                                                                                                                                                    
+Hello.java:10: error: reached end of file while parsing                                                                                                                                                     
+}                                                                                                                                                                                                           
+ ^                                                                                                                                                                                                          
+3 errors  
+
+
+-----------------------------------------------------------------------------------
+Exercise 4
+
+Answer 
+
+public class Name{
+   public static void main(String[] args){
+      System.out.println("Name: Hanyu Zheng");
+      System.out.println("NetId: 3021990638");
+      System.out.println("CS 455, lab1");
+}
+}
+ccc_v1_w_ZTVi_116612@runweb15:~$ javac Name.java                                                                                                                                                            
+ccc_v1_w_ZTVi_116612@runweb15:~$ java Name                                                                                                                                                                  
+Name: Hanyu Zheng                                                                                                                                                                                           
+NetId: 3021990638                                                                                                                                                                                           
+CS 455, lab1         
+------------------------------------------------------------
