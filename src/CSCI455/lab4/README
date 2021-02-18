@@ -1,0 +1,198 @@
+Name:
+USC NetID:
+CSCI 455 Spring 2021
+Lab 4
+
+Note: On-campus students can put their answers to the lab questions in this file, or use a piece of paper they can show to their lab TA.  DEN students will need to put their answers in this README, so they will get submitted.
+============================================================================================
+Exercise 1 (1 checkoff point)
+====================================================================
+Question 1.1 Why can doing this save you time in the long run, over implementing the whole class at once?
+
+Answer 1.1 Because writing part of program and run it, you will know the bugs only existing in this part.
+you can fix the bugs quickly and when you fix the bugs from this part of program, this part pf program will
+exist problem and you will not fix this part of program next time. But if you run whole class at once, you
+will not know where are these bugs and you do not whether these bugs influence others bugs and you have to
+spending much time to fix these bugs.
+======================================================================
+Exercise 2 (1 checkoff point)
+==========================================================================
+Question 2.1 Write down the expected results of calling minVal on each of the Nums objects that would result
+from the input in: nums.in, test1.in, and test2.in.
+
+Answer 2.1
+test1.in (100 90 80 70 60 50 40 30 20 10 0 -10 -20 -30 -40 -50 -60)
+minVal = -60
+
+test2.in(100 -50 90
+         -80 60 70
+         50 -15 60
+         15 -6 60
+         -18 -15 26)
+minVal = -80
+
+nums.in (3 -7 10 17 9 -17 17 21 18 7)
+minVal = -17
+---------------------------------------------------------------------------------------
+Question 2.2 From just looking at the results of a call to minVal, you can't always tell whether the Nums object
+you called it on was empty or non-empty. Write down two examples of non-empty Nums objects such that they
+return the same value as for an empty Nums object.
+
+Answer 2.2
+2147483647
+space + Ctrl + d
+=======================================================================================
+Exercise 3 (1 checkoff point)
+========================================================================================
+Question 3.1 Write down the expected results of the hard-coded tests of valuesGT from NumsTester when run on:
+nums.in, test1.in, and test2.in.
+
+Answer 3.1
+
+nums1.in
+------------ testing valuesGT --------------
+Values greater than 10: (17 17 21 18)
+Original list of nums: (3 -7 10 17 9 -17 17 21 18 7)
+--------------------------------------------
+------------ testing valuesGT --------------
+Values greater than -20: (3 -7 10 17 9 -17 17 21 18 7)
+Original list of nums: (3 -7 10 17 9 -17 17 21 18 7)
+--------------------------------------------
+------------ testing valuesGT --------------
+Values greater than -17: (3 -7 10 17 9 17 21 18 7)
+Original list of nums: (3 -7 10 17 9 -17 17 21 18 7)
+--------------------------------------------
+------------ testing valuesGT --------------
+Values greater than 21: ()
+Original list of nums: (3 -7 10 17 9 -17 17 21 18 7)
+--------------------------------------------
+
+test1.in
+------------ testing valuesGT --------------
+Values greater than 10: (100 90 80 70 60 50 40 30 20)
+Original list of nums: (100 90 80 70 60 50 40 30 20 10 0 -10 -20 -30 -40 -50 -60
+--------------------------------------------
+------------ testing valuesGT --------------
+Values greater than -20: (100 90 80 70 60 50 40 30 20 10 0 -10)
+Original list of nums: (100 90 80 70 60 50 40 30 20 10 0 -10 -20 -30 -40 -50 -60
+--------------------------------------------
+------------ testing valuesGT --------------
+Values greater than -17: (100 90 80 70 60 50 40 30 20 10 0 -10)
+Original list of nums: (100 90 80 70 60 50 40 30 20 10 0 -10 -20 -30 -40 -50 -60
+--------------------------------------------
+------------ testing valuesGT --------------
+Values greater than 21: (100 90 80 70 60 50 40 30)
+Original list of nums: (100 90 80 70 60 50 40 30 20 10 0 -10 -20 -30 -40 -50 -60
+--------------------------------------------
+
+test2.in
+------------ testing valuesGT --------------
+Values greater than 10: (100 90 60 70 50 60 15 60 26)
+Original list of nums: (100 -50 90 -80 60 70 50 -15 60 15 -6 60 -18 -15 26)
+--------------------------------------------
+------------ testing valuesGT --------------
+Values greater than -20: (100 90 60 70 50 -15 60 15 -6 60 -18 -15 26)
+Original list of nums: (100 -50 90 -80 60 70 50 -15 60 15 -6 60 -18 -15 26)
+--------------------------------------------
+------------ testing valuesGT --------------
+Values greater than -17: (100 90 60 70 50 -15 60 15 -6 60 -15 26)
+Original list of nums: (100 -50 90 -80 60 70 50 -15 60 15 -6 60 -18 -15 26)
+--------------------------------------------
+------------ testing valuesGT --------------
+Values greater than 21: (100 90 60 70 50 60 60 26)
+Original list of nums: (100 -50 90 -80 60 70 50 -15 60 15 -6 60 -18 -15 26)
+--------------------------------------------
+Question 3.2 Create an additional test case in a new file test3.in that explicitly tests a boundary case of
+valuesGT when run with on the hard-coded tests of valuesGT from NumsTester. Add the expected results of of this
+new test case to the list of expected results you gave in Question 3.1
+
+Answer 3.2
+------------ testing valuesGT --------------
+Values greater than 10: (21)
+Original list of nums: (-17 10 -20 21)
+--------------------------------------------
+------------ testing valuesGT --------------
+Values greater than -20: (-17 10 21)
+Original list of nums: (-17 10 -20 21)
+--------------------------------------------
+------------ testing valuesGT --------------
+Values greater than -17: (10 21)
+Original list of nums: (-17 10 -20 21)
+--------------------------------------------
+------------ testing valuesGT --------------
+Values greater than 21: ()
+
+Original list of nums: (-17 10 -20 21)
+--------------------------------------------
+my program doesn't exist the boundary cases because of my array will resize when the size of array reach the maximum capacity.
+=============================================================================
+Exercise 4 (1 checkoff point)
+==============================================================================
+Question 4.1 Give two examples of other possible things you could type in to cause this program to terminate
+(i.e., besides Ctrl-d). Try each of these on your program.
+
+Answer 4.1 enter the letters but not integer
+enter the double type but not integer
+-------------------------------------------------------------
+Question 4.2 Write down an equivalent statement with more parentheses to show the grouping (i.e.,
+associativity) of the "." operators, that is, to show what part of the expression gets evaluated first. Hint: if you
+think about it, only one grouping makes sense.
+
+Answer 4.2
+nums.valuesGT(threshold).printVals();=>(nums.valueGT(threshold)).printVals();
+----------------------------------------------------------------------------------
+Question 4.3 What is the type of the innermost sub-expression you put parentheses around (i.e., the one that gets
+evaluated first)?
+
+Answer 4.3
+the type of the innermost sub-expression is Nums
+------------------------------------------------------------------------
+Question 4.4 Write a sequence of statements equivalent to the whole statement in question, but that uses a local
+variable to store intermediate results.
+
+Answer 4.4
+Nums nums = new Nums();
+Nums tempNums = nums.valuesGT(threshold);
+tempNums.printVals();
+--------------------------------------------------------------
+Question 4.5 What's the disadvantage of using an ArrayList compared to an array in the Nums class?
+
+Answer 4.5 ArrayList is achieved by array. The Nums class is to achieve ArrayList. If you use ArrayList in
+Nums class, what is the meaning of this lab and I can use the methods of ArrayList to answer all question.
+ArrayList is a complex version of Array, and this Lab only needs to experiment with Integer,
+so there is no need for ArrayList with more complex data structures.
+---------------------------------------------------------------------------------
+Question 4.6 What's the advantage of using an ArrayList compared to an array in the Nums class?
+
+Answer 4.6
+Just call the method directly. You don't have to write the underlying implementation method.
+--------------------------------------------------------------------------------------------------
+Question 4.7 Many programs involve arrays (or equivalently, array lists), but you don't always need to store all
+the values when you are processing a sequence of numbers. For each of the following tasks related to this lab say
+whether an array is necessary to complete the task, and briefly describe why or why not. We're interested in this
+because we could use a lot less memory if we don't have to save all the numbers.
+To put it another way, do you need to save all the numbers to do the task? (why or why not)
+1. Reading in a sequence of numbers and printing them all out.
+2. Reading in a sequence of numbers and printing out the minimum value in the sequence.
+3. Reading in a sequence of numbers, printing them out, and printing out the minimum value in the
+sequence.
+4. Reading in a threshold value, a sequence of numbers, and printing out the numbers from the sequence that
+are above the threshold value.
+5. Same task, as the previous one, but with the specification that you you have to read in the sequence of
+numbers before you read in the threshold.
+6. Reading in a sequence of numbers, and generating the exact output produced by NumsTester.java about
+that data.
+
+Answer 4.7
+1.you should save all the numbers because you want to print them out.
+
+2.you do not to save all numbers because you just want the minimum one.
+
+3.you should save all because you want to print all them out.
+
+4. you do not save all the number because you just need the numbers above the threshold number.
+
+5. you should save numbers because you want get the sequence of numbers before you read the threshold number
+
+6.you should save the numbers because NumsTester.java need them.
+

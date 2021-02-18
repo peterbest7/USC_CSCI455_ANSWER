@@ -1,0 +1,7 @@
+2 9 9 11 18 23 50
+put 9
+put 11
+pick 2
+pick 0
+put 11
+end

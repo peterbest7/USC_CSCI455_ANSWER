@@ -1,0 +1,5 @@
+Please enter initial arrangement of books followed by newline:
+[1] 0 0
+Type pick <index> or put <height> followed by newline. Type end to exit.
+ERROR: Height of a book must be positive.
+Exiting Program.
